@@ -14,6 +14,10 @@
 		73EF72442C69A05B00C9080A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 73EF72432C69A05B00C9080A /* FirebaseAuth */; };
 		73EF72462C69A05B00C9080A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 73EF72452C69A05B00C9080A /* FirebaseFirestore */; };
 		73EF72482C69A05B00C9080A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 73EF72472C69A05B00C9080A /* FirebaseStorage */; };
+		73EF724A2C69A4A000C9080A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF72492C69A4A000C9080A /* User.swift */; };
+		73EF724C2C69A65500C9080A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724B2C69A65500C9080A /* UserService.swift */; };
+		73EF724E2C69C18900C9080A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724D2C69C18900C9080A /* ViewModel.swift */; };
+		73EF72502C69C24A00C9080A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724F2C69C24A00C9080A /* UserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,11 @@
 		73EF72302C69974300C9080A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		73EF72322C69974600C9080A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73EF72352C69974600C9080A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		73EF72492C69A4A000C9080A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		73EF724B2C69A65500C9080A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		73EF724D2C69C18900C9080A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		73EF724F2C69C24A00C9080A /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		73EF72532C69C2B000C9080A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +66,7 @@
 		73EF722D2C69974300C9080A /* RmineTwist */ = {
 			isa = PBXGroup;
 			children = (
+				73EF72532C69C2B000C9080A /* GoogleService-Info.plist */,
 				73EF723C2C699F0E00C9080A /* Core */,
 				73EF723D2C699F1300C9080A /* Extensions */,
 				73EF723E2C699F2400C9080A /* Model */,
@@ -81,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				73EF72412C699F4C00C9080A /* Root */,
+				73EF724D2C69C18900C9080A /* ViewModel.swift */,
+				73EF724F2C69C24A00C9080A /* UserView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -95,6 +107,7 @@
 		73EF723E2C699F2400C9080A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				73EF72492C69A4A000C9080A /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +115,7 @@
 		73EF723F2C699F2800C9080A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				73EF724B2C69A65500C9080A /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -199,8 +213,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EF724E2C69C18900C9080A /* ViewModel.swift in Sources */,
+				73EF72502C69C24A00C9080A /* UserView.swift in Sources */,
+				73EF724C2C69A65500C9080A /* UserService.swift in Sources */,
 				73EF72312C69974300C9080A /* ContentView.swift in Sources */,
 				73EF722F2C69974300C9080A /* RmineTwistApp.swift in Sources */,
+				73EF724A2C69A4A000C9080A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +367,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = suslmk.RmineTwist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -378,6 +399,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = suslmk.RmineTwist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
