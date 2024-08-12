@@ -16,6 +16,7 @@ class ViewModel: ObservableObject {
     
     @MainActor
     private func fetchUsers() async throws {
+        print("DEBUG: run to fetchUsers()")
         self.users = try await UserService.fetchUsers()
     }
 }

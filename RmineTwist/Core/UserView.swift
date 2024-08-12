@@ -11,13 +11,11 @@ struct UserView: View {
     @StateObject var viewModel = ViewModel()
     
     var body: some View {
-        NavigationStack {
-            ScrollView {
-                LazyVStack {
-                    ForEach(viewModel.users) { user in
-                        VStack {
-                            Text(user.specversion)
-                        }
+        ScrollView {
+            LazyVStack {
+                ForEach(viewModel.users) { user in
+                    VStack {
+                        Text(user.data.login)
                     }
                 }
             }

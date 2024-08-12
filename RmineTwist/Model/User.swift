@@ -6,42 +6,43 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 // MARK: - User
 struct User: Identifiable, Codable {
-    let specversion, id, source, type: String
-    let datacontenttype, time: String
+    let id: String
+    let objectKey: String
+    let source, specversion, type: String
+    let time: Timestamp
     let data: DataClass
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case objectKey = "object_key"
+        case source, specversion, type
+        case time = "time"
+        case data = "data"
+    }
 }
 
 // MARK: - DataClass
-struct DataClass: Codable {
+struct DataClass: Identifiable, Codable {
     let id: Int
-    let login, hashedPassword, firstname, lastname: String
+    let firstName: String
+    let lastName: String
     let admin: Bool
+    let login: String
     let status: Int
-    let lastLoginOn: On
-    let language: String
-    let authSourceID: AuthSourceID
-    let createdOn, updatedOn: Date
-    let type, mailNotification, salt: String
-    let mustChangePasswd: Bool
-    let passwdChangedOn: On
-
+    let createdOn: Timestamp
+    
     enum CodingKeys: String, CodingKey {
-        case id, login
-        case hashedPassword = "hashed_password"
-        case firstname, lastname, admin, status
-        case lastLoginOn = "last_login_on"
-        case language
-        case authSourceID = "auth_source_id"
-        case createdOn = "created_on"
-        case updatedOn = "updated_on"
-        case type
-        case mailNotification = "mail_notification"
-        case salt
-        case mustChangePasswd = "must_change_passwd"
-        case passwdChangedOn = "passwd_changed_on"
+        case id = "ID"
+        case firstName = "Firstname"
+        case lastName = "Lastname"
+        case admin = "Admin"
+        case login = "Login"
+        case status = "Status"
+        case createdOn = "CreatedOn"
     }
 }
 

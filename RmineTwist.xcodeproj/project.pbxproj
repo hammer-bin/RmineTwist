@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		734982AC2C69E8E4000BAD75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 734982AB2C69E8E4000BAD75 /* GoogleService-Info.plist */; };
+		734982AE2C69F722000BAD75 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982AD2C69F722000BAD75 /* Issue.swift */; };
+		734982B02C69F98C000BAD75 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982AF2C69F98C000BAD75 /* Message.swift */; };
+		734982B22C69FBBE000BAD75 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982B12C69FBBE000BAD75 /* MessageService.swift */; };
+		734982B42C69FFCC000BAD75 /* IssueService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982B32C69FFCC000BAD75 /* IssueService.swift */; };
 		73EF722F2C69974300C9080A /* RmineTwistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF722E2C69974300C9080A /* RmineTwistApp.swift */; };
 		73EF72312C69974300C9080A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF72302C69974300C9080A /* ContentView.swift */; };
 		73EF72332C69974600C9080A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73EF72322C69974600C9080A /* Assets.xcassets */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		734982AB2C69E8E4000BAD75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		734982AD2C69F722000BAD75 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		734982AF2C69F98C000BAD75 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		734982B12C69FBBE000BAD75 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
+		734982B32C69FFCC000BAD75 /* IssueService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueService.swift; sourceTree = "<group>"; };
 		73EF722B2C69974300C9080A /* RmineTwist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RmineTwist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73EF722E2C69974300C9080A /* RmineTwistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RmineTwistApp.swift; sourceTree = "<group>"; };
 		73EF72302C69974300C9080A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,7 +40,6 @@
 		73EF724B2C69A65500C9080A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		73EF724D2C69C18900C9080A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		73EF724F2C69C24A00C9080A /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
-		73EF72532C69C2B000C9080A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +75,7 @@
 		73EF722D2C69974300C9080A /* RmineTwist */ = {
 			isa = PBXGroup;
 			children = (
-				73EF72532C69C2B000C9080A /* GoogleService-Info.plist */,
+				734982AB2C69E8E4000BAD75 /* GoogleService-Info.plist */,
 				73EF723C2C699F0E00C9080A /* Core */,
 				73EF723D2C699F1300C9080A /* Extensions */,
 				73EF723E2C699F2400C9080A /* Model */,
@@ -108,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				73EF72492C69A4A000C9080A /* User.swift */,
+				734982AD2C69F722000BAD75 /* Issue.swift */,
+				734982AF2C69F98C000BAD75 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				73EF724B2C69A65500C9080A /* UserService.swift */,
+				734982B12C69FBBE000BAD75 /* MessageService.swift */,
+				734982B32C69FFCC000BAD75 /* IssueService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 			files = (
 				73EF72362C69974600C9080A /* Preview Assets.xcassets in Resources */,
 				73EF72332C69974600C9080A /* Assets.xcassets in Resources */,
+				734982AC2C69E8E4000BAD75 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +228,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				73EF724E2C69C18900C9080A /* ViewModel.swift in Sources */,
+				734982AE2C69F722000BAD75 /* Issue.swift in Sources */,
 				73EF72502C69C24A00C9080A /* UserView.swift in Sources */,
 				73EF724C2C69A65500C9080A /* UserService.swift in Sources */,
+				734982B22C69FBBE000BAD75 /* MessageService.swift in Sources */,
 				73EF72312C69974300C9080A /* ContentView.swift in Sources */,
+				734982B02C69F98C000BAD75 /* Message.swift in Sources */,
+				734982B42C69FFCC000BAD75 /* IssueService.swift in Sources */,
 				73EF722F2C69974300C9080A /* RmineTwistApp.swift in Sources */,
 				73EF724A2C69A4A000C9080A /* User.swift in Sources */,
 			);
