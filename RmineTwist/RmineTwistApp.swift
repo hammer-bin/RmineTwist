@@ -23,7 +23,7 @@ struct RmineTwistApp: App {
     
     var body: some Scene {
         WindowGroup {
-            IssueView()
+            ContentView()
         }
     }
 }

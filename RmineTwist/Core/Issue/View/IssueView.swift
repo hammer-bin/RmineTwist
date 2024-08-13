@@ -9,13 +9,25 @@ import SwiftUI
 
 struct IssueView: View {
     @StateObject var viewModel = IssueViewModel()
+    @State private var searchText = ""
     
     var body: some View {
-        LazyVStack {
-            ForEach(viewModel.issues) { issue in
-                
-                IssueItemView(issueData: issue.data)
+        NavigationStack {
+            ScrollView {
+                LazyVStack {
+                    ForEach(viewModel.issues) { issue in
+                        NavigationLink(value: issue.data) {
+                            
+                            IssueItemView(issueData: issue.data)
+                        }
+                    }
+                }
             }
+            .navigationDestination(for: IssueData.self, destination: { issue in
+                IssueDetail()
+            })
+            .navigationTitle("Search")
+            .searchable(text: $searchText, prompt: "Search")
         }
     }
     
@@ -23,28 +35,38 @@ struct IssueView: View {
         let issueData: IssueData
         
         var body: some View {
-            HStack {
+            HStack(spacing: 3) {
                 VStack {
                     Circle()
                         .frame(width: 55, height: 55)
                     
-                    Text(issueData.author)
+                    Text(issueData.subject)
                     
                     
                 }
-                .background(Color.red)
                 .padding(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color(.systemGray3), lineWidth: 1)
                 )
+                VStack(alignment: .leading) {
+                    Text(issueData.description)
+                    Group {
+                        Text(issueData.updatedOn.timestampString())
+                        Text("할당시간 : \(issueData.estimatedHour)")
+                    }
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.gray)
+                    
+                }
+                .padding()
                 
-                
-                Text(issueData.subject)
-                    //.frame(maxWidth: .infinity)
+                Spacer()
             }
+            .padding(.horizontal, 8)
             .frame(maxWidth: .infinity)
-            .background(Color.gray)
+            
             
             
         }

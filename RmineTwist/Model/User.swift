@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 // MARK: - User
-struct User: Identifiable, Codable {
+struct User: Identifiable, Codable, Hashable {
     let id: String
     let objectKey: String
     let source, specversion, type: String
@@ -26,7 +26,7 @@ struct User: Identifiable, Codable {
 }
 
 // MARK: - DataClass
-struct DataClass: Identifiable, Codable {
+struct DataClass: Identifiable, Codable, Hashable {
     let id: Int
     let firstName: String
     let lastName: String
