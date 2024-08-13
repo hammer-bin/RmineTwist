@@ -22,6 +22,7 @@
 		73EF724C2C69A65500C9080A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724B2C69A65500C9080A /* UserService.swift */; };
 		73EF724E2C69C18900C9080A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724D2C69C18900C9080A /* ViewModel.swift */; };
 		73EF72502C69C24A00C9080A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724F2C69C24A00C9080A /* UserView.swift */; };
+		73F1A5DC2C6AFB09003C2938 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73F1A5DB2C6AFB09003C2938 /* GoogleService-Info.plist */; };
 		89A6891B2C6AB26D003C281D /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6891A2C6AB26D003C281D /* IssueViewModel.swift */; };
 		89A6891D2C6AB2C8003C281D /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6891C2C6AB2C8003C281D /* IssueView.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		73EF724B2C69A65500C9080A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		73EF724D2C69C18900C9080A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		73EF724F2C69C24A00C9080A /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		73F1A5DB2C6AFB09003C2938 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		89A6891A2C6AB26D003C281D /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		89A6891C2C6AB2C8003C281D /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,7 @@
 		73EF722D2C69974300C9080A /* RmineTwist */ = {
 			isa = PBXGroup;
 			children = (
+				73F1A5DB2C6AFB09003C2938 /* GoogleService-Info.plist */,
 				73EF723C2C699F0E00C9080A /* Core */,
 				73EF723D2C699F1300C9080A /* Extensions */,
 				73EF723E2C699F2400C9080A /* Model */,
@@ -243,6 +246,7 @@
 			files = (
 				73EF72362C69974600C9080A /* Preview Assets.xcassets in Resources */,
 				73EF72332C69974600C9080A /* Assets.xcassets in Resources */,
+				73F1A5DC2C6AFB09003C2938 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
