@@ -8,8 +8,47 @@
 import SwiftUI
 
 struct IssueView: View {
+    @StateObject var viewModel = IssueViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LazyVStack {
+            ForEach(viewModel.issues) { issue in
+                
+                IssueItemView(issueData: issue.data)
+            }
+        }
+    }
+    
+    private struct IssueItemView: View {
+        let issueData: IssueData
+        
+        var body: some View {
+            HStack {
+                VStack {
+                    Circle()
+                        .frame(width: 55, height: 55)
+                    
+                    Text(issueData.author)
+                    
+                    
+                }
+                .background(Color.red)
+                .frame(width: .infinity)
+                .padding(8)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color(.systemGray3), lineWidth: 1)
+                )
+                
+                
+                Text(issueData.subject)
+                    //.frame(maxWidth: .infinity)
+            }
+            .frame(maxWidth: .infinity)
+            .background(Color.gray)
+            
+            
+        }
     }
 }
 

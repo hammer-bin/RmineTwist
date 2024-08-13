@@ -14,8 +14,17 @@ struct UserView: View {
         ScrollView {
             LazyVStack {
                 ForEach(viewModel.users) { user in
-                    VStack {
-                        Text(user.data.login)
+                    VStack(spacing: 8) {
+                        HStack {
+                            Image(systemName: "phone")
+                            
+                            Text(user.data.login)
+                                .font(.headline)
+                                .frame(width: 100, height: 20)
+                                .background(Color.gray.opacity(0.1))
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        }
+                            
                     }
                 }
             }

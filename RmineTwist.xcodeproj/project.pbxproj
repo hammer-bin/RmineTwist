@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		734982AC2C69E8E4000BAD75 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 734982AB2C69E8E4000BAD75 /* GoogleService-Info.plist */; };
 		734982AE2C69F722000BAD75 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982AD2C69F722000BAD75 /* Issue.swift */; };
 		734982B02C69F98C000BAD75 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982AF2C69F98C000BAD75 /* Message.swift */; };
 		734982B22C69FBBE000BAD75 /* MessageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734982B12C69FBBE000BAD75 /* MessageService.swift */; };
@@ -23,10 +22,11 @@
 		73EF724C2C69A65500C9080A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724B2C69A65500C9080A /* UserService.swift */; };
 		73EF724E2C69C18900C9080A /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724D2C69C18900C9080A /* ViewModel.swift */; };
 		73EF72502C69C24A00C9080A /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EF724F2C69C24A00C9080A /* UserView.swift */; };
+		89A6891B2C6AB26D003C281D /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6891A2C6AB26D003C281D /* IssueViewModel.swift */; };
+		89A6891D2C6AB2C8003C281D /* IssueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89A6891C2C6AB2C8003C281D /* IssueView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		734982AB2C69E8E4000BAD75 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		734982AD2C69F722000BAD75 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		734982AF2C69F98C000BAD75 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		734982B12C69FBBE000BAD75 /* MessageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageService.swift; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		73EF724B2C69A65500C9080A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		73EF724D2C69C18900C9080A /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		73EF724F2C69C24A00C9080A /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		89A6891A2C6AB26D003C281D /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
+		89A6891C2C6AB2C8003C281D /* IssueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,6 @@
 		73EF722D2C69974300C9080A /* RmineTwist */ = {
 			isa = PBXGroup;
 			children = (
-				734982AB2C69E8E4000BAD75 /* GoogleService-Info.plist */,
 				73EF723C2C699F0E00C9080A /* Core */,
 				73EF723D2C699F1300C9080A /* Extensions */,
 				73EF723E2C699F2400C9080A /* Model */,
@@ -99,6 +100,7 @@
 		73EF723C2C699F0E00C9080A /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				89A689162C6AB24D003C281D /* Issue */,
 				73EF72412C699F4C00C9080A /* Root */,
 				73EF724D2C69C18900C9080A /* ViewModel.swift */,
 				73EF724F2C69C24A00C9080A /* UserView.swift */,
@@ -146,6 +148,31 @@
 				73EF72302C69974300C9080A /* ContentView.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		89A689162C6AB24D003C281D /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+				89A689182C6AB259003C281D /* View */,
+				89A689172C6AB254003C281D /* ViewModel */,
+			);
+			path = Issue;
+			sourceTree = "<group>";
+		};
+		89A689172C6AB254003C281D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				89A6891A2C6AB26D003C281D /* IssueViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		89A689182C6AB259003C281D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				89A6891C2C6AB2C8003C281D /* IssueView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,7 +243,6 @@
 			files = (
 				73EF72362C69974600C9080A /* Preview Assets.xcassets in Resources */,
 				73EF72332C69974600C9080A /* Assets.xcassets in Resources */,
-				734982AC2C69E8E4000BAD75 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,12 +256,14 @@
 				73EF724E2C69C18900C9080A /* ViewModel.swift in Sources */,
 				734982AE2C69F722000BAD75 /* Issue.swift in Sources */,
 				73EF72502C69C24A00C9080A /* UserView.swift in Sources */,
+				89A6891B2C6AB26D003C281D /* IssueViewModel.swift in Sources */,
 				73EF724C2C69A65500C9080A /* UserService.swift in Sources */,
 				734982B22C69FBBE000BAD75 /* MessageService.swift in Sources */,
 				73EF72312C69974300C9080A /* ContentView.swift in Sources */,
 				734982B02C69F98C000BAD75 /* Message.swift in Sources */,
 				734982B42C69FFCC000BAD75 /* IssueService.swift in Sources */,
 				73EF722F2C69974300C9080A /* RmineTwistApp.swift in Sources */,
+				89A6891D2C6AB2C8003C281D /* IssueView.swift in Sources */,
 				73EF724A2C69A4A000C9080A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +406,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,6 +439,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
