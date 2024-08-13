@@ -33,7 +33,6 @@ struct IssueView: View {
                     
                 }
                 .background(Color.red)
-                .frame(width: .infinity)
                 .padding(8)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)

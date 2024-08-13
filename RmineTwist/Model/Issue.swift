@@ -35,6 +35,8 @@ struct IssueData: Identifiable, Codable {
     let estimatedHour: Int
     let id: Int
     let jobId: Int
+    let trackerId: Int
+    let projectId: Int
     let notes: String
     let priority: String
     let startDate: Timestamp
@@ -52,6 +54,8 @@ struct IssueData: Identifiable, Codable {
         case estimatedHour = "EstimatedHours"
         case id = "ID"
         case jobId = "JobID"
+        case trackerId = "TrackerID"
+        case projectId = "ProjectID"
         case notes = "Notes"
         case priority = "Priority"
         case startDate = "StartDate"
