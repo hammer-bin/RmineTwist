@@ -10,11 +10,17 @@ import FirebaseFirestore
 
 class UserService {
     @Published var currentUser: User?
+    private var allUsers: [Int: User] = [:]
     
     static let shared = UserService()
     
     init() {
-        Task { try await fetchCurrentUser() }
+        Task {
+            try await fetchAllUser()
+            try await fetchCurrentUser()
+            
+        }
+        
     }
     
     @MainActor
@@ -26,15 +32,34 @@ class UserService {
         self.currentUser = user
     }
     
+    @MainActor
+    func fetchAllUser() async throws {
+        print("DEBUG: fecthAllUser start!")
+        let snapshot = try await Firestore.firestore().collection("users").getDocuments()
+        let users = snapshot.documents.compactMap{ try? $0.data(as: User.self)}
+        for user in users {
+            allUsers[user.data.id] = user
+            print("DEBUG: fetchAllUser:: \(user.data.firstName)")
+        }
+    }
+    
     static func fetchUsers() async throws -> [User] {
         let snapshot = try await Firestore.firestore().collection("users").getDocuments()
         let users = snapshot.documents.compactMap({ try? $0.data(as: User.self) })
         return users
     }
     
-    static func fetchUser(withUid uid: String) async throws -> User {
-        let snapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
-        return try snapshot.data(as: User.self)
-    }
+    @MainActor
+    func fetchUser(byDataClassID dataClassID: Int) async throws -> User? {
+            let querySnapshot = try await Firestore.firestore().collection("users")
+                .whereField("data.ID", isEqualTo: dataClassID)
+                .getDocuments()
+
+            guard let document = querySnapshot.documents.first else {
+                return nil // If no user with the given ID is found, return nil
+            }
+
+            return try document.data(as: User.self)
+        }
 }
 

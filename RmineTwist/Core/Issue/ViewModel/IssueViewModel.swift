@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 class IssueViewModel: ObservableObject {
     @Published var issues = [Issue]()
     
@@ -14,9 +15,20 @@ class IssueViewModel: ObservableObject {
         Task { try await fetchIssue() }
     }
     
-    @MainActor
+    
     private func fetchIssue() async throws {
         print("DEBUG: run to fetchIssue()")
         self.issues = try await IssueService.fetchIssue()
+        try await fetchUserDataForIssues()
+    }
+    
+    private func fetchUserDataForIssues() async throws {
+        for i in 0 ..< issues.count {
+            let issue = issues[i]
+            let ownerID = issue.data.authorId
+            let issueUser = try await UserService.shared.fetchUser(byDataClassID: ownerID)
+            
+            issues[i].user = issueUser
+        }
     }
 }

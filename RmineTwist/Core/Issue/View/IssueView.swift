@@ -16,31 +16,36 @@ struct IssueView: View {
             ScrollView {
                 LazyVStack {
                     ForEach(viewModel.issues) { issue in
-                        NavigationLink(value: issue.data) {
+                        NavigationLink(value: issue) {
                             
-                            IssueItemView(issueData: issue.data)
+                            IssueItemView(issue: issue)
+                            
                         }
                     }
                 }
             }
-            .navigationDestination(for: IssueData.self, destination: { issue in
-                IssueDetail()
+            .refreshable {
+                
+            }
+            .navigationDestination(for: Issue.self, destination: { issue in
+                IssueDetail(issue: issue)
+                    .navigationBarTitleDisplayMode(.inline)
             })
-            .navigationTitle("Search")
+            .navigationTitle("일감")
             .searchable(text: $searchText, prompt: "Search")
         }
     }
     
     private struct IssueItemView: View {
-        let issueData: IssueData
+        let issue: Issue
         
         var body: some View {
             HStack(spacing: 3) {
                 VStack {
-                    Circle()
-                        .frame(width: 55, height: 55)
+                    CircularProfileImageView(size: .medium)
                     
-                    Text(issueData.subject)
+                    Text(issue.user?.data.firstName ?? "nil")
+                        .foregroundStyle(.black)
                     
                     
                 }
@@ -50,10 +55,18 @@ struct IssueView: View {
                         .stroke(Color(.systemGray3), lineWidth: 1)
                 )
                 VStack(alignment: .leading) {
-                    Text(issueData.description)
+                    Text(issue.data.subject)
+                        .font(.system(size: 16))
+                        .multilineTextAlignment(.center)
+                        .lineLimit(1)
+                        .foregroundStyle(.black)
+                    Text(issue.data.notes)
+                        .font(.system(size: 12))
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
+                        .foregroundStyle(.black)
                     Group {
-                        Text(issueData.updatedOn.timestampString())
-                        Text("할당시간 : \(issueData.estimatedHour)")
+                        Text("할당시간 : \(issue.data.estimatedHour)")
                     }
                     .font(.footnote)
                     .fontWeight(.semibold)
@@ -63,12 +76,16 @@ struct IssueView: View {
                 .padding()
                 
                 Spacer()
+                
+                VStack {
+                    Text(issue.data.updatedOn.timestampString())
+                        .foregroundStyle(.gray)
+                        .font(.footnote)
+                }
+                .padding()
             }
             .padding(.horizontal, 8)
             .frame(maxWidth: .infinity)
-            
-            
-            
         }
     }
 }

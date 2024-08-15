@@ -22,6 +22,8 @@ struct Issue: Identifiable, Codable, Hashable {
         case time = "time"
         case data = "data"
     }
+    
+    var user: User?
 }
 
 struct IssueData: Identifiable, Codable, Hashable {
